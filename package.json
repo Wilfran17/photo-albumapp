@@ -1,4 +1,10 @@
 {
+  "name": "photo-albumapp",
+  "version": "1.0.0",
+  "homepage": "https://Wilfran17.github.io/photo-albumapp",
+  "scripts": {
+    "deploy": "gh-pages -d build"
+  },
   "devDependencies": {
     "gh-pages": "^6.3.0"
   }
