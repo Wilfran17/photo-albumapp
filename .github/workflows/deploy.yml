@@ -32,4 +32,3 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./client/build
         force_orphan: true
-        keep_history: true
