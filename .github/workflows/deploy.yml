@@ -3,8 +3,6 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
 
 jobs:
   build:
@@ -31,3 +29,4 @@ jobs:
       with:
         branch: gh-pages
         folder: client/build
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
