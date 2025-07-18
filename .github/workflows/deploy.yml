@@ -25,8 +25,10 @@ jobs:
         cd client
         npm run build
     - name: Deploy with GitHub Pages
-      uses: JamesIves/github-pages-deploy-action@v4
+      uses: peaceiris/actions-gh-pages@v3
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        branch: gh-pages
-        folder: client/build
+        publish_dir: ./client/build
+        publish_branch: gh-pages
+        force_orphan: true
