@@ -34,6 +34,8 @@ jobs:
         npm run build
 
     - name: Deploy to GitHub Pages
-      uses: actions/deploy-pages@v2
+      uses: peaceiris/actions-gh-pages@v3
       with:
-        path: client/build
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./client/build
+        force_orphan: true
