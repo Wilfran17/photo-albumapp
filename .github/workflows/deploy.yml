@@ -25,7 +25,12 @@ jobs:
         cd client
         npm run build
     - name: Deploy
-      uses: actions-ecosystem/action-deploy-pages@v1
+      uses: actions/upload-artifact@v3
       with:
-        token: ${{ secrets.GITHUB_TOKEN }}
+        name: build-artifact
         path: client/build
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./client/build
