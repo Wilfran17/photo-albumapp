@@ -25,9 +25,4 @@ jobs:
         cd client
         npm run build
     - name: Deploy to GitHub Pages
-      uses: JamesIves/github-pages-deploy-action@v4.3.0
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        branch: gh-pages
-        folder: client/build
-        clean: true
+      uses: actions/deploy-pages@v1
