@@ -34,13 +34,15 @@ jobs:
         npm run build
 
     - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
+      uses: JamesIves/github-pages-deploy-action@v4.3.0
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./client/build
-        force_orphan: true
+        token: ${{ secrets.GITHUB_TOKEN }}
+        branch: gh-pages
+        folder: client/build
+        clean: true
+        force: true
+        target_directory: ''
         keep_history: false
         commit_message: 'Deploy from GitHub Actions'
         publish_branch: gh-pages
         repository_url: 'https://github.com/Wilfran17/photo-albumapp.git'
-        target_directory: ''
